@@ -1,0 +1,11 @@
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.dll
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.pdb
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\Entity.dll
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.dll
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\Entity.pdb
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.xml
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csprojAssemblyReference.cache
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CopyComplete
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.dll
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.pdb

@@ -1,0 +1,7 @@
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\bin\Debug\ProyectoGUI.exe.config
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\bin\Debug\ProyectoGUI.exe
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\bin\Debug\ProyectoGUI.pdb
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\obj\Debug\ProyectoGUI.csprojAssemblyReference.cache
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\obj\Debug\ProyectoGUI.csproj.CoreCompileInputs.cache
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\obj\Debug\ProyectoGUI.exe
+C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\ProyectoGUI\obj\Debug\ProyectoGUI.pdb
