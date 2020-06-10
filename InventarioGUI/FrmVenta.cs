@@ -33,6 +33,8 @@ namespace InventarioGUI
 
             LlenarVendedor();
             LlenarProducto();
+
+            Limpiar();
         }
 
         private void ChkDescuento_CheckedChanged(object sender, System.EventArgs e)
@@ -40,6 +42,7 @@ namespace InventarioGUI
             if (ChkDescuento.Checked)
             {
                 TxtDescuento.Enabled = true;
+                TxtDescuento.Text = "";
             }
             else
             {
@@ -122,21 +125,15 @@ namespace InventarioGUI
             DgvProductos.Rows[indice].Cells[1].Value = detalleVenta.Producto.NombreProducto;
             DgvProductos.Rows[indice].Cells[2].Value = detalleVenta.Cantidad;
             DgvProductos.Rows[indice].Cells[3].Value = detalleVenta.Producto.PrecioProducto;
-            DgvProductos.Rows[indice].Cells[4].Value = detalleVenta.Total;            
+            DgvProductos.Rows[indice].Cells[4].Value = detalleVenta.Total;
         }
 
         public Venta CrearVenta()
         {
             Vendedor vendedor = vendedores.Find(v => v.NombreVendedor.Equals(CmbVendedor.Text));
 
-            foreach (var item in detallesVentas)
-            {
-                item.CodigoVenta = CodVenta.ToString();
-            }
-
             Venta venta = new Venta()
             {
-                IdVenta = CodVenta.ToString(),
                 Vendedor = vendedor,
                 Descuento = Convert.ToDouble(TxtDescuento.Text),
                 DetalleVenta = detallesVentas
@@ -146,8 +143,6 @@ namespace InventarioGUI
 
             return venta;
         }
-
-        int CodVenta = 30;
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
@@ -165,7 +160,15 @@ namespace InventarioGUI
 
             string mensaje = ventaService.Guardar(venta);
 
-            MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (mensaje.Equals("Se guardaron los datos correctamente"))
+            {
+                MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             foreach (var detalleVenta in venta.DetalleVenta)
             {
@@ -174,6 +177,28 @@ namespace InventarioGUI
             }
 
 
+        }
+
+        public void Limpiar()
+        {
+            CmbVendedor.SelectedIndex = 0;
+            CmbProducto.SelectedIndex = 0;
+            TxtCodigo.Text = "";
+            PckCantidad.Value = 1;
+            DgvProductos.DataSource = null;
+            TxtSubtotal.Text = "";
+            TxtIva.Text = "";
+            TxtDescuento.Text = "";
+            TxtTotal.Text = "";
+            ChkDescuento.Checked = false;
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if(indice != -1)
+            {
+                DgvProductos.Rows.RemoveAt(indice);
+            }
         }
     }
 }

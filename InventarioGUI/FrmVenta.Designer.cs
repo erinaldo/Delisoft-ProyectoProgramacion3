@@ -53,7 +53,6 @@
             this.TxtSubtotal = new System.Windows.Forms.TextBox();
             this.TxtIva = new System.Windows.Forms.TextBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.ChkDescuento = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PckCantidad)).BeginInit();
@@ -132,6 +131,7 @@
             this.TxtDescuento.Name = "TxtDescuento";
             this.TxtDescuento.Size = new System.Drawing.Size(132, 22);
             this.TxtDescuento.TabIndex = 20;
+            this.TxtDescuento.Text = "0";
             // 
             // LblDescuento
             // 
@@ -276,6 +276,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(91)))));
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F);
             this.BtnAgregar.Location = new System.Drawing.Point(80, 129);
             this.BtnAgregar.Name = "BtnAgregar";
@@ -285,22 +286,11 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // BtnModificar
-            // 
-            this.BtnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(96)))), ((int)(((byte)(203)))));
-            this.BtnModificar.Enabled = false;
-            this.BtnModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F);
-            this.BtnModificar.Location = new System.Drawing.Point(260, 130);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(113, 43);
-            this.BtnModificar.TabIndex = 36;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            // 
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
             this.BtnEliminar.Enabled = false;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F);
             this.BtnEliminar.Location = new System.Drawing.Point(433, 130);
             this.BtnEliminar.Name = "BtnEliminar";
@@ -308,6 +298,7 @@
             this.BtnEliminar.TabIndex = 37;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // ChkDescuento
             // 
@@ -328,7 +319,6 @@
             this.ClientSize = new System.Drawing.Size(633, 496);
             this.Controls.Add(this.ChkDescuento);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.DgvProductos);
             this.Controls.Add(this.PckCantidad);
@@ -379,7 +369,6 @@
         private System.Windows.Forms.TextBox TxtSubtotal;
         private System.Windows.Forms.TextBox TxtIva;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.CheckBox ChkDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;

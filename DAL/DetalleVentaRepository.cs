@@ -16,11 +16,10 @@ namespace DAL
             using (var Comando = _connection.CreateCommand())
             {
                 Comando.CommandText = "INSERT INTO DetalleVenta (CodigoDetalleVenta, Cantidad, Total, CodigoProducto, CodigoVenta) VALUES" +
-                    "(CodigoDetalleVenta.NEXTVAL, :Cantidad, :Total, :CodigoProducto, :CodigoVenta)";
+                    "(CodigoDetalleVenta.NEXTVAL, :Cantidad, :Total, :CodigoProducto, VENTACODIGO.CURRVAL)";
                 Comando.Parameters.Add("Cantidad", OracleDbType.Varchar2).Value = detalleVenta.Cantidad;
                 Comando.Parameters.Add("Total", OracleDbType.Varchar2).Value = detalleVenta.Total;
                 Comando.Parameters.Add("CodigoProducto", OracleDbType.Varchar2).Value = detalleVenta.Producto.IdProducto;
-                Comando.Parameters.Add("CodigoVenta", OracleDbType.Varchar2).Value = detalleVenta.CodigoVenta;
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
             }

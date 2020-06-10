@@ -20,7 +20,21 @@ namespace InventarioGUI
             };
 
             string mensaje = pqrsService.Guardar(pqrs);
-            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+
+            if (mensaje.Contains("se guardaron los datos correctamente"))
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void Limpiar()
+        {
+            TxtAsunto.Text = "";
+            TxtCuerpo.Text = "";
         }
     }
 }

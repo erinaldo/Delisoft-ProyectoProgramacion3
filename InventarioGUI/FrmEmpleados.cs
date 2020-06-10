@@ -26,11 +26,18 @@ namespace InventarioGUI
             if (mensaje.Equals("se guardaron los datos correctamente"))
             {
                 MessageBox.Show(mensaje, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                Limpiar();
             }
             else
             {
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        public void Limpiar()
+        {
+            TxtIdentificacion.Text = "";
+            TxtNombres.Text = "";
         }
 
         private void BtnConsultar_Click(object sender, EventArgs e)

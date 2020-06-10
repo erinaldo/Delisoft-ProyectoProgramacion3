@@ -16,8 +16,7 @@ namespace DAL
             using (var Comando = _connection.CreateCommand())
             {
                 Comando.CommandText = "INSERT INTO Venta (CodigoVenta, ValorTotal, ValorDescuento, Subtotal, CodigoVendedor) VALUES" +
-                    "(:CodigoVenta, :ValorTotal, :ValorDescuento, :Subtotal, :CodigoVendedor)";
-                Comando.Parameters.Add("CodigoVenta", OracleDbType.Varchar2).Value = venta.IdVenta;
+                    "(VENTACODIGO.nextval, :ValorTotal, :ValorDescuento, :Subtotal, :CodigoVendedor)";
                 Comando.Parameters.Add("ValorTotal", OracleDbType.Varchar2).Value = venta.ValorTotal;
                 Comando.Parameters.Add("ValorDescuento", OracleDbType.Varchar2).Value = venta.DescuentoAplicado;
                 Comando.Parameters.Add("Subtotal", OracleDbType.Varchar2).Value = venta.Subtotal;

@@ -9,3 +9,14 @@ C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Deb
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CopyComplete
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.dll
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\Entity.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\Entity.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.xml
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csprojAssemblyReference.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CopyComplete
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.pdb

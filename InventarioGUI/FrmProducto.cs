@@ -91,6 +91,8 @@ namespace InventarioGUI
             string mensaje = productoService.Guardar(producto);
 
             MessageBox.Show(mensaje, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Limpiar();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -131,6 +133,16 @@ namespace InventarioGUI
                 MessageBox.Show("Error " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+        }
+
+        public void Limpiar()
+        {
+            TxtIdeProducto.Text = "";
+            TxtNombre.Text = "";
+            TxtPrecioUnidad.Text = "";
+            CmbMateriaPrima.SelectedIndex = 0;
+            CmbCategoria.SelectedIndex = 0;
+            TblMateriaPrima.DataSource = "";
         }
     }
 }
