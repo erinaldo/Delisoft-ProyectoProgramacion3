@@ -23,7 +23,6 @@ namespace DAL
                 Comando.Parameters.Add("Nombre", OracleDbType.Varchar2).Value = materiaPrima.Nombre;
                 Comando.Parameters.Add("Cantidad", OracleDbType.Varchar2).Value = materiaPrima.Cantidad;
                 Comando.Parameters.Add("FechaAlmacenamiento", OracleDbType.Varchar2).Value = materiaPrima.FechaAlmacenamiento;
-                Comando.Parameters.Add("Categoria", OracleDbType.Varchar2).Value = materiaPrima.Categoria;
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
             }
@@ -70,14 +69,8 @@ namespace DAL
                 Nombre = dataReader.GetString(1),
                 Cantidad = dataReader.GetInt32(2),
                 FechaAlmacenamiento = dataReader.GetString(3),
-                Categoria = dataReader.GetString(4)
             };
             return materiaPrima;
-        }
-
-        public List<MateriaPrima> FiltroPorCaragoria(List<MateriaPrima> materiasPrimas, string categoria)
-        {
-            return materiasPrimas.Where(m => m.Categoria.Equals(categoria)).ToList();
         }
     }
 }

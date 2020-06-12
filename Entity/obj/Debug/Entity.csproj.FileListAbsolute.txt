@@ -4,3 +4,9 @@ C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Entity\obj\Debug\Entity
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Entity\obj\Debug\Entity.dll
 C:\Users\Mario Mendoza\source\repos\Proyecto\ProyectoGUI\Entity\obj\Debug\Entity.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\bin\Debug\Entity.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\bin\Debug\Entity.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\obj\Debug\Entity.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Entity\obj\Debug\Entity.pdb

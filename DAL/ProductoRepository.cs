@@ -17,27 +17,12 @@ namespace DAL
         {
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "INSERT INTO Producto (CodigoProducto, NombreProducto, PrecioProducto) VALUES" +
+                Comando.CommandText = "INSERT INTO producto (CodigoProducto, NombreProducto, PrecioProducto) VALUES" +
                     "(:CodigoProducto, :NombreProducto, :PrecioProducto)";
                 Comando.Parameters.Add("CodigoProducto", OracleDbType.Varchar2).Value = producto.IdProducto;
                 Comando.Parameters.Add("NombreProducto", OracleDbType.Varchar2).Value = producto.NombreProducto;
                 Comando.Parameters.Add("PrecioProducto", OracleDbType.Varchar2).Value = producto.PrecioProducto;
 
-                var filas = Comando.ExecuteNonQuery();
-                return filas;
-            }
-        }
-
-        public int GuardarIntercepta(Producto producto)
-        {
-            using (var Comando = _connection.CreateCommand())
-            {
-                foreach (var materiaPrima in producto.MateriasPrimas)
-                {
-                    Comando.CommandText = "INSERT INTO MateriaProducto (CodigoProducto, CodigoMateriaPrima) VALUES (:CodigoProducto, :CodigoMateriaPrima)";
-                    Comando.Parameters.Add("CodigoProducto", OracleDbType.Varchar2).Value = producto.IdProducto;
-                    Comando.Parameters.Add("CodigoMateriaPrima", OracleDbType.Varchar2).Value = materiaPrima.Codigo;
-                }
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
             }

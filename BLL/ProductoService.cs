@@ -27,11 +27,6 @@ namespace BLL
 
                 conexion.Close();
 
-                conexion.Open();
-
-                productoRepository.GuardarIntercepta(producto);
-
-                conexion.Close();
                 return $"se guardaron los datos correctamente ";
             }
             catch (System.Exception eg)

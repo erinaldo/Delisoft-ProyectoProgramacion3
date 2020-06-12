@@ -4,8 +4,10 @@
     {
         public string Codigo { get; set; }
         public string Nombre { get; set; }
+        public int CantidadEnvase { get; set; }
         public int Cantidad { get; set; }
         public string FechaAlmacenamiento { get; set; }
-        public string Categoria { get; set; }
+        public double Precio { get; set; }
+        public Categoria Categoria { get; set; }
     }
 }

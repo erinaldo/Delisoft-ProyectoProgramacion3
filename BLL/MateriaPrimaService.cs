@@ -68,26 +68,6 @@ namespace BLL
 
         }
 
-        public RespuestaFiltroPorCategoria FiltroPorCategoria(List<MateriaPrima> materiasPrimas, string categoria)
-        {
-            RespuestaFiltroPorCategoria respuesta = new RespuestaFiltroPorCategoria();
-            try
-            {
-                respuesta.materiasPrimasFiltro = materiaPrimaRepository.FiltroPorCaragoria(materiasPrimas, categoria);
-                respuesta.ErrorFiltro = false;
-                respuesta.MensajeFiltro = "Se ha realizado el filtro";
-
-                return respuesta;
-            }
-            catch (Exception e)
-            {
-                respuesta.ErrorFiltro = true;
-                respuesta.MensajeFiltro = "Error de aplicación " + e.Message;
-
-                return respuesta;
-            }
-        }
-
         public RespuestaFiltroPorCodigo ConsultarCodigo(string codigo)
         {
             RespuestaFiltroPorCodigo respuesta = new RespuestaFiltroPorCodigo();
@@ -118,12 +98,6 @@ namespace BLL
         public bool ErrorMateriaPrima;
         public string MensajeMateriaPrima;
         public List<MateriaPrima> MateriasPrimas;
-    }
-    public class RespuestaFiltroPorCategoria
-    {
-        public bool ErrorFiltro;
-        public string MensajeFiltro;
-        public List<MateriaPrima> materiasPrimasFiltro;
     }
     public class RespuestaFiltroPorCodigo
     {

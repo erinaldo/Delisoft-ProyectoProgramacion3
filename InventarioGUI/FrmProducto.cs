@@ -30,7 +30,6 @@ namespace InventarioGUI
                 materiasPrimas = respuestaConsultar.MateriasPrimas;
                 foreach (var materiaPrima in materiasPrimas)
                 {
-                    CmbCategoria.Items.Add(materiaPrima.Categoria);
                 }
 
 
@@ -41,14 +40,8 @@ namespace InventarioGUI
         private void CmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             CmbMateriaPrima.Items.Clear();
-            RespuestaFiltroPorCategoria respuesta = new RespuestaFiltroPorCategoria();
 
-            respuesta = materiaPrimaService.FiltroPorCategoria(materiasPrimas, CmbCategoria.Text);
 
-            foreach (var materiaPrima in respuesta.materiasPrimasFiltro)
-            {
-                CmbMateriaPrima.Items.Add(materiaPrima.Codigo);
-            }
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -86,7 +79,6 @@ namespace InventarioGUI
                 IdProducto = TxtIdeProducto.Text,
                 NombreProducto = TxtNombre.Text,
                 PrecioProducto = Convert.ToDouble(TxtPrecioUnidad.Text),
-                MateriasPrimas = LlenarTabla()
             };
             string mensaje = productoService.Guardar(producto);
 
@@ -121,7 +113,6 @@ namespace InventarioGUI
                         Nombre = TblMateriaPrima.Rows[indice].Cells[1].Value.ToString(),
                         Cantidad = Convert.ToInt32(TblMateriaPrima.Rows[indice].Cells[2].Value.ToString()),
                         FechaAlmacenamiento = TblMateriaPrima.Rows[indice].Cells[3].Value.ToString(),
-                        Categoria = CmbCategoria.Text.Trim()
                     };
 
                     materiasPrimasProducto.Add(materiaPrima);
