@@ -63,12 +63,6 @@
     <Compile Include="AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bodega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bodega.Designer.cs">
-      <DependentUpon>Bodega.cs</DependentUpon>
-    </Compile>
     <Compile Include="CabiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +88,18 @@
     <Compile Include="FrmConfiguracion.Designer.cs">
       <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultaMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaMateriaPrima.Designer.cs">
+      <DependentUpon>FrmConsultaMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaProductos.Designer.cs">
+      <DependentUpon>FrmConsultaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </Compile>
     <Compile Include="FrmMateriaPrima.Designer.cs">
       <DependentUpon>FrmMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperacionesProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperacionesProductos.Designer.cs">
+      <DependentUpon>FrmOperacionesProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProducto.cs">
       <SubType>Form</SubType>
@@ -153,9 +165,6 @@
     <EmbeddedResource Include="AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bodega.resx">
-      <DependentUpon>Bodega.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CabiarContraseña.resx">
       <DependentUpon>CabiarContraseña.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,12 @@
     <EmbeddedResource Include="FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaMateriaPrima.resx">
+      <DependentUpon>FrmConsultaMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaProductos.resx">
+      <DependentUpon>FrmConsultaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMateriaPrima.resx">
       <DependentUpon>FrmMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperacionesProductos.resx">
+      <DependentUpon>FrmOperacionesProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>

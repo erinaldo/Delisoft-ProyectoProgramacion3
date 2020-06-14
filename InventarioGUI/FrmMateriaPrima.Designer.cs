@@ -40,6 +40,7 @@
             this.LblCantidadEnvase = new System.Windows.Forms.Label();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.BtnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NmbCantidadEnvase)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             this.BtnGuardar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F);
             this.BtnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardar.Image")));
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnGuardar.Location = new System.Drawing.Point(200, 271);
+            this.BtnGuardar.Location = new System.Drawing.Point(63, 271);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(82, 61);
             this.BtnGuardar.TabIndex = 6;
@@ -150,11 +151,28 @@
             this.lblPrecio.TabIndex = 11;
             this.lblPrecio.Text = "Precio:";
             // 
+            // BtnConsultar
+            // 
+            this.BtnConsultar.FlatAppearance.BorderSize = 0;
+            this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultar.Image")));
+            this.BtnConsultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnConsultar.Location = new System.Drawing.Point(255, 271);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(94, 64);
+            this.BtnConsultar.TabIndex = 47;
+            this.BtnConsultar.Text = "Consultar";
+            this.BtnConsultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            // 
             // FrmMateriaPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 355);
+            this.ClientSize = new System.Drawing.Size(428, 355);
+            this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.NmbCantidadEnvase);
@@ -190,5 +208,6 @@
         private System.Windows.Forms.Label LblCantidadEnvase;
         private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Button BtnConsultar;
     }
 }

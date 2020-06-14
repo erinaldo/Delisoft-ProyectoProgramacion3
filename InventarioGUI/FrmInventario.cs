@@ -9,12 +9,6 @@ namespace InventarioGUI
         {
             InitializeComponent();
         }
-
-        private void BtnBodega_Click(object sender, EventArgs e)
-        {
-            new Bodega().Show();
-        }
-
         private void BtnProductos_Click(object sender, EventArgs e)
         {
             new FrmProducto().Show();
@@ -23,11 +17,6 @@ namespace InventarioGUI
         private void BtnMateriaPrima_Click(object sender, EventArgs e)
         {
             new FrmMateriaPrima().Show();
-        }
-
-        private void BtnBodega_Click_1(object sender, EventArgs e)
-        {
-            new Bodega().Show();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Entity;
 using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace DAL
@@ -18,11 +19,14 @@ namespace DAL
         {
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "INSERT INTO MateriaPrima (CodigoMateriaPrima, Nombre, Cantidad, FechaAlmacenamiento, Categoria) VALUES" +
-                    "(CodigoMateriaPrima.NEXTVAL, :Nombre, :Cantidad, :FechaAlmacenamiento, :Categoria)";
+                Comando.CommandText = "INSERT INTO MateriaPrima (codigomateria, nombre, cantidadenvase, cantidad, precio, fechaalmacenamiento, codigocategoria) VALUES" +
+                    "(codigomateriaprima.NEXTVAL, :nombre, :cantidadenvase, :cantidad, :precio, :fechaalmacenamiento, :codigocategoria)";
                 Comando.Parameters.Add("Nombre", OracleDbType.Varchar2).Value = materiaPrima.Nombre;
+                Comando.Parameters.Add("cantidadenvase", OracleDbType.Varchar2).Value = materiaPrima.CantidadEnvase;
                 Comando.Parameters.Add("Cantidad", OracleDbType.Varchar2).Value = materiaPrima.Cantidad;
-                Comando.Parameters.Add("FechaAlmacenamiento", OracleDbType.Varchar2).Value = materiaPrima.FechaAlmacenamiento;
+                Comando.Parameters.Add("precio", OracleDbType.Varchar2).Value = materiaPrima.Precio;
+                Comando.Parameters.Add("fechaalmacenamiento", OracleDbType.Varchar2).Value = materiaPrima.FechaAlmacenamiento;
+                Comando.Parameters.Add("codigocategoria", OracleDbType.Varchar2).Value = materiaPrima.Categoria.CodigoCategoria;
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
             }
@@ -33,7 +37,7 @@ namespace DAL
             OracleDataReader dataReader;
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "SELECT * FROM MateriaPrima";
+                Comando.CommandText = "SELECT * FROM materiaprima";
                 dataReader = Comando.ExecuteReader();
                 if (dataReader.HasRows)
                 {
@@ -46,18 +50,26 @@ namespace DAL
             }
             return materiasPrimas;
         }
-        public MateriaPrima ConsultarCodigo(string codigo)
+
+        public List<MateriaPrima> ConsultarCategoria(string categoria)
         {
             OracleDataReader dataReader;
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "SELECT * FROM MateriaPrima WHERE CodigoMateriaPrima = :CodigoMateriaPrima";
-                Comando.Parameters.Add("CodigoMateriaPrima", OracleDbType.Varchar2).Value = codigo;
+                Comando.CommandText = "SELECT mp.codigomateria, mp.nombre, mp.cantidadenvase, mp.cantidad," +
+                    "mp.precio, mp.fechaalmacenamiento FROM materiaprima mp JOIN categoria c ON mp.codigocategoria = c.codigocategoria WHERE c.nombre = :categoria";
+                Comando.Parameters.Add("categoria", OracleDbType.Varchar2).Value = categoria;
                 dataReader = Comando.ExecuteReader();
-                dataReader.Read();
-                MateriaPrima materiaPrima = Mapear(dataReader);
-                return materiaPrima;
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        MateriaPrima materiaPrima = Mapear(dataReader);
+                        materiasPrimas.Add(materiaPrima);
+                    }
+                }
             }
+            return materiasPrimas;
         }
 
         private MateriaPrima Mapear(OracleDataReader dataReader)
@@ -67,10 +79,13 @@ namespace DAL
             {
                 Codigo = dataReader.GetString(0),
                 Nombre = dataReader.GetString(1),
-                Cantidad = dataReader.GetInt32(2),
-                FechaAlmacenamiento = dataReader.GetString(3),
+                CantidadEnvase = dataReader.GetInt32(2),
+                Cantidad = dataReader.GetInt32(3),
+                Precio = dataReader.GetDouble(4),
+                FechaAlmacenamiento = dataReader.GetString(5)
             };
             return materiaPrima;
         }
+
     }
 }

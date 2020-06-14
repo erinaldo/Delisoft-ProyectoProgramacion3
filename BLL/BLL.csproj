@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaService.cs" />
+    <Compile Include="CompuestoProductoService.cs" />
     <Compile Include="DetalleVentaService.cs" />
     <Compile Include="MateriaPrimaService.cs" />
     <Compile Include="PqrsService.cs" />

@@ -17,11 +17,10 @@ namespace DAL
         {
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "INSERT INTO producto (CodigoProducto, NombreProducto, PrecioProducto) VALUES" +
-                    "(:CodigoProducto, :NombreProducto, :PrecioProducto)";
-                Comando.Parameters.Add("CodigoProducto", OracleDbType.Varchar2).Value = producto.IdProducto;
-                Comando.Parameters.Add("NombreProducto", OracleDbType.Varchar2).Value = producto.NombreProducto;
-                Comando.Parameters.Add("PrecioProducto", OracleDbType.Varchar2).Value = producto.PrecioProducto;
+                Comando.CommandText = "INSERT INTO producto (codigoproducto, nombre, precioproducto) VALUES" +
+                    "(codigoproducto.NEXTVAL, :nombre, :precioproducto)";
+                Comando.Parameters.Add("nombre", OracleDbType.Varchar2).Value = producto.NombreProducto;
+                Comando.Parameters.Add("precio", OracleDbType.Varchar2).Value = producto.PrecioProducto;
 
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
@@ -33,7 +32,9 @@ namespace DAL
             OracleDataReader dataReader;
             using(var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "SELECT * FROM Producto";
+                Comando.CommandText = "SELECT * FROM producto p " +
+                    "JOIN compuestoproducto cp ON p.codigoproducto = cp.codigoproducto " +
+                    "JOIN materiaprima mp ON cp.codigomateria = mp.codigomateria";
                 dataReader = Comando.ExecuteReader();
                 if (dataReader.HasRows)
                 {

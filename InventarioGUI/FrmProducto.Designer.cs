@@ -42,11 +42,14 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaAlmacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LblMateriaPrima = new System.Windows.Forms.Label();
-            this.CmbCategoria = new System.Windows.Forms.ComboBox();
-            this.CmbMateriaPrima = new System.Windows.Forms.ComboBox();
+            this.CmbMateria = new System.Windows.Forms.ComboBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.NumCantidad = new System.Windows.Forms.NumericUpDown();
+            this.LblCantidad = new System.Windows.Forms.Label();
+            this.BtnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TblMateriaPrima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtPrecioUnidad
@@ -74,7 +77,7 @@
             this.BtnGuardarProducto.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardarProducto.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardarProducto.Image")));
             this.BtnGuardarProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnGuardarProducto.Location = new System.Drawing.Point(302, 498);
+            this.BtnGuardarProducto.Location = new System.Drawing.Point(123, 501);
             this.BtnGuardarProducto.Name = "BtnGuardarProducto";
             this.BtnGuardarProducto.Size = new System.Drawing.Size(82, 64);
             this.BtnGuardarProducto.TabIndex = 30;
@@ -157,30 +160,20 @@
             // 
             this.LblMateriaPrima.AutoSize = true;
             this.LblMateriaPrima.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMateriaPrima.Location = new System.Drawing.Point(84, 193);
+            this.LblMateriaPrima.Location = new System.Drawing.Point(134, 193);
             this.LblMateriaPrima.Name = "LblMateriaPrima";
             this.LblMateriaPrima.Size = new System.Drawing.Size(104, 23);
             this.LblMateriaPrima.TabIndex = 39;
             this.LblMateriaPrima.Text = "Materia prima:";
             // 
-            // CmbCategoria
+            // CmbMateria
             // 
-            this.CmbCategoria.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.CmbCategoria.FormattingEnabled = true;
-            this.CmbCategoria.Location = new System.Drawing.Point(200, 194);
-            this.CmbCategoria.Name = "CmbCategoria";
-            this.CmbCategoria.Size = new System.Drawing.Size(191, 24);
-            this.CmbCategoria.TabIndex = 40;
-            this.CmbCategoria.SelectedIndexChanged += new System.EventHandler(this.CmbCategoria_SelectedIndexChanged);
-            // 
-            // CmbMateriaPrima
-            // 
-            this.CmbMateriaPrima.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.CmbMateriaPrima.FormattingEnabled = true;
-            this.CmbMateriaPrima.Location = new System.Drawing.Point(397, 194);
-            this.CmbMateriaPrima.Name = "CmbMateriaPrima";
-            this.CmbMateriaPrima.Size = new System.Drawing.Size(191, 24);
-            this.CmbMateriaPrima.TabIndex = 41;
+            this.CmbMateria.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.CmbMateria.FormattingEnabled = true;
+            this.CmbMateria.Location = new System.Drawing.Point(250, 194);
+            this.CmbMateria.Name = "CmbMateria";
+            this.CmbMateria.Size = new System.Drawing.Size(191, 24);
+            this.CmbMateria.TabIndex = 40;
             // 
             // BtnAgregar
             // 
@@ -214,15 +207,50 @@
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
+            // NumCantidad
+            // 
+            this.NumCantidad.Location = new System.Drawing.Point(531, 199);
+            this.NumCantidad.Name = "NumCantidad";
+            this.NumCantidad.Size = new System.Drawing.Size(47, 20);
+            this.NumCantidad.TabIndex = 44;
+            // 
+            // LblCantidad
+            // 
+            this.LblCantidad.AutoSize = true;
+            this.LblCantidad.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidad.Location = new System.Drawing.Point(455, 196);
+            this.LblCantidad.Name = "LblCantidad";
+            this.LblCantidad.Size = new System.Drawing.Size(70, 23);
+            this.LblCantidad.TabIndex = 45;
+            this.LblCantidad.Text = "Cantidad:";
+            // 
+            // BtnConsultar
+            // 
+            this.BtnConsultar.FlatAppearance.BorderSize = 0;
+            this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultar.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultar.Image")));
+            this.BtnConsultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnConsultar.Location = new System.Drawing.Point(469, 501);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(94, 64);
+            this.BtnConsultar.TabIndex = 46;
+            this.BtnConsultar.Text = "Consultar";
+            this.BtnConsultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 588);
+            this.Controls.Add(this.BtnConsultar);
+            this.Controls.Add(this.LblCantidad);
+            this.Controls.Add(this.NumCantidad);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.CmbMateriaPrima);
-            this.Controls.Add(this.CmbCategoria);
+            this.Controls.Add(this.CmbMateria);
             this.Controls.Add(this.LblMateriaPrima);
             this.Controls.Add(this.TblMateriaPrima);
             this.Controls.Add(this.TxtPrecioUnidad);
@@ -236,6 +264,7 @@
             this.Name = "FrmProducto";
             this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.TblMateriaPrima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,13 +280,15 @@
         private System.Windows.Forms.Label LblIdProducto;
         private System.Windows.Forms.DataGridView TblMateriaPrima;
         private System.Windows.Forms.Label LblMateriaPrima;
-        private System.Windows.Forms.ComboBox CmbCategoria;
-        private System.Windows.Forms.ComboBox CmbMateriaPrima;
+        private System.Windows.Forms.ComboBox CmbMateria;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlmacenamiento;
+        private System.Windows.Forms.NumericUpDown NumCantidad;
+        private System.Windows.Forms.Label LblCantidad;
+        private System.Windows.Forms.Button BtnConsultar;
     }
 }

@@ -58,5 +58,10 @@ namespace InventarioGUI
                 MessageBox.Show(respuesta.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            new FrmConsultaMateriaPrima().Show();
+        }
     }
 }

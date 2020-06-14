@@ -20,3 +20,14 @@ C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456a
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\DAL\obj\Debug\DAL.dll
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\DAL\obj\Debug\DAL.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.dll.config
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Entity.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Entity.pdb
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.dll
+C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.pdb

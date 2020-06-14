@@ -9,6 +9,9 @@ namespace InventarioGUI
     public partial class FrmProducto : MetroFramework.Forms.MetroForm
     {
         List<MateriaPrima> materiasPrimas;
+        List<CompuestoProducto> compuestosProducto = new List<CompuestoProducto>();
+
+        CompuestoProductoService compuestoProductoService;
         MateriaPrimaService materiaPrimaService;
         ProductoService productoService;
         int indice;
@@ -17,75 +20,56 @@ namespace InventarioGUI
             InitializeComponent();
             materiaPrimaService = new MateriaPrimaService(ConfigConnection.connectionString);
             productoService = new ProductoService(ConfigConnection.connectionString);
-            ConsultarMateriaPrima();
+            compuestoProductoService = new CompuestoProductoService(ConfigConnection.connectionString);
+            LlenarMateriaPrima();
         }
-        public void ConsultarMateriaPrima()
+        public void LlenarMateriaPrima()
         {
-            RespuestaConsultarMateriaPrima respuestaConsultar = new RespuestaConsultarMateriaPrima();
-            respuestaConsultar = materiaPrimaService.Consultar();
+            RespuestaConsultarMateriaPrima respuesta = materiaPrimaService.Consultar();
+            materiasPrimas = respuesta.MateriasPrimas;
 
-            if (respuestaConsultar.ErrorMateriaPrima == false)
+            if (respuesta.ErrorMateriaPrima == false)
             {
-                CmbCategoria.Items.Add("CATEGORIAS");
-                materiasPrimas = respuestaConsultar.MateriasPrimas;
-                foreach (var materiaPrima in materiasPrimas)
+                foreach (var materiaPrima in respuesta.MateriasPrimas)
                 {
-                }
-
-
-
-            }
-        }
-
-        private void CmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CmbMateriaPrima.Items.Clear();
-
-
-        }
-
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            RespuestaFiltroPorCodigo respuestas = new RespuestaFiltroPorCodigo();
-            respuestas = materiaPrimaService.ConsultarCodigo(CmbMateriaPrima.Text);
-
-            indice = TblMateriaPrima.Rows.Add();
-
-            if (respuestas.ErrorFiltroCodigo == false)
-            {
-                try
-                {
-                    TblMateriaPrima.Rows[indice].Cells[0].Value = respuestas.materiaPrima.Codigo;
-                    TblMateriaPrima.Rows[indice].Cells[1].Value = respuestas.materiaPrima.Nombre;
-                    TblMateriaPrima.Rows[indice].Cells[2].Value = respuestas.materiaPrima.Cantidad;
-                    TblMateriaPrima.Rows[indice].Cells[3].Value = respuestas.materiaPrima.FechaAlmacenamiento;
-                    MessageBox.Show(respuestas.MensajeFiltroCodigo, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Algunos de los campos son invalidos, intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CmbMateria.Items.Add(materiaPrima.Nombre);
                 }
             }
             else
             {
-                MessageBox.Show(respuestas.MensajeFiltroCodigo, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(respuesta.MensajeMateriaPrima, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
-        private void BtnGuardarProducto_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Producto producto = new Producto()
+            MateriaPrima materiaPrima = materiasPrimas.Find(m => m.Nombre.Equals(CmbMateria.Text));
+
+            CompuestoProducto compuesto = new CompuestoProducto()
             {
-                IdProducto = TxtIdeProducto.Text,
-                NombreProducto = TxtNombre.Text,
-                PrecioProducto = Convert.ToDouble(TxtPrecioUnidad.Text),
+                CantidadUnitaria = Convert.ToInt32(NumCantidad.Value),
+                MateriaPrima = materiaPrima
             };
-            string mensaje = productoService.Guardar(producto);
 
-            MessageBox.Show(mensaje, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            compuestosProducto.Add(compuesto);
 
-            Limpiar();
+            indice = TblMateriaPrima.Rows.Add();
+
+            try
+            {
+                TblMateriaPrima.Rows[indice].Cells[0].Value = materiaPrima.Codigo;
+                TblMateriaPrima.Rows[indice].Cells[1].Value = materiaPrima.Nombre;
+                TblMateriaPrima.Rows[indice].Cells[2].Value = NumCantidad.Value.ToString();
+                TblMateriaPrima.Rows[indice].Cells[3].Value = materiaPrima.FechaAlmacenamiento;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Algunos de los campos son invalidos, intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
+
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
@@ -100,40 +84,41 @@ namespace InventarioGUI
             indice = e.RowIndex;
         }
 
-        private List<MateriaPrima> LlenarTabla()
-        {
-            try
-            {
-                List<MateriaPrima> materiasPrimasProducto = new List<MateriaPrima>();
-                for (int i = 0; i <= indice; i++)
-                {
-                    MateriaPrima materiaPrima = new MateriaPrima()
-                    {
-                        Codigo = TblMateriaPrima.Rows[indice].Cells[0].Value.ToString(),
-                        Nombre = TblMateriaPrima.Rows[indice].Cells[1].Value.ToString(),
-                        Cantidad = Convert.ToInt32(TblMateriaPrima.Rows[indice].Cells[2].Value.ToString()),
-                        FechaAlmacenamiento = TblMateriaPrima.Rows[indice].Cells[3].Value.ToString(),
-                    };
-
-                    materiasPrimasProducto.Add(materiaPrima);
-                }
-                return materiasPrimasProducto;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
         public void Limpiar()
         {
             TxtIdeProducto.Text = "";
             TxtNombre.Text = "";
             TxtPrecioUnidad.Text = "";
-            CmbMateriaPrima.SelectedIndex = 0;
-            CmbCategoria.SelectedIndex = 0;
+            CmbMateria.SelectedIndex = 0;
+            CmbMateria.SelectedIndex = 0;
             TblMateriaPrima.DataSource = "";
+        }
+
+        private void BtnGuardarProducto_Click(object sender, EventArgs e)
+        {
+            Producto producto = new Producto()
+            {
+                NombreProducto = TxtNombre.Text,
+                PrecioProducto = Convert.ToDouble(TxtPrecioUnidad.Text),
+                Compuestos = compuestosProducto
+            };
+
+            string mensaje1 = productoService.Guardar(producto);
+            MessageBox.Show(mensaje1, "Mensaje");
+
+            foreach (var compuesto in compuestosProducto)
+            {
+                string mensaje2 = compuestoProductoService.Guardar(compuesto);
+                MessageBox.Show(mensaje2, "Mensaje");
+            }
+
+            
+            
+        }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            new FrmConsultaProductos().Show();
         }
     }
 }

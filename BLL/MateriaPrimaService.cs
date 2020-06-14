@@ -68,29 +68,37 @@ namespace BLL
 
         }
 
-        public RespuestaFiltroPorCodigo ConsultarCodigo(string codigo)
+        public RespuestaConsultarMateriaPrima ConsultarCategoria(string categoria)
         {
-            RespuestaFiltroPorCodigo respuesta = new RespuestaFiltroPorCodigo();
+            RespuestaConsultarMateriaPrima respuesta = new RespuestaConsultarMateriaPrima();
             try
             {
                 conexion.Open();
-                respuesta.materiaPrima = materiaPrimaRepository.ConsultarCodigo(codigo);
+                respuesta.MateriasPrimas = materiaPrimaRepository.ConsultarCategoria(categoria);
                 conexion.Close();
-                respuesta.MensajeFiltroCodigo = "Se ha consultado satisfactoriamente";
-                respuesta.ErrorFiltroCodigo = false;
+                if (respuesta.MateriasPrimas.Count > 0)
+                {
+                    respuesta.MensajeMateriaPrima = "Se consultaron los datos";
+                }
+                else
+                {
+                    respuesta.MensajeMateriaPrima = "Los datos no existen";
+                }
+                respuesta.ErrorMateriaPrima = false;
                 return respuesta;
 
             }
             catch (Exception e)
             {
-                respuesta.ErrorFiltroCodigo = true;
-                respuesta.MensajeFiltroCodigo = $"Error de la aplicación: " + e.Message;
+                respuesta.ErrorMateriaPrima = true;
+                respuesta.MensajeMateriaPrima = $"Error de la aplicación: " + e.Message;
                 return respuesta;
             }
             finally
             {
                 conexion.Close();
             }
+
         }
     }
     public class RespuestaConsultarMateriaPrima
@@ -98,11 +106,5 @@ namespace BLL
         public bool ErrorMateriaPrima;
         public string MensajeMateriaPrima;
         public List<MateriaPrima> MateriasPrimas;
-    }
-    public class RespuestaFiltroPorCodigo
-    {
-        public bool ErrorFiltroCodigo;
-        public string MensajeFiltroCodigo;
-        public MateriaPrima materiaPrima;
     }
 }
