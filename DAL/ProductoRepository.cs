@@ -32,9 +32,7 @@ namespace DAL
             OracleDataReader dataReader;
             using(var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "SELECT * FROM producto p " +
-                    "JOIN compuestoproducto cp ON p.codigoproducto = cp.codigoproducto " +
-                    "JOIN materiaprima mp ON cp.codigomateria = mp.codigomateria";
+                Comando.CommandText = "SELECT * FROM producto";
                 dataReader = Comando.ExecuteReader();
                 if (dataReader.HasRows)
                 {

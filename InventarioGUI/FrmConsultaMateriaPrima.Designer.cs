@@ -93,6 +93,7 @@
             this.Controls.Add(this.LblFechaAlmacenamiento);
             this.Controls.Add(this.DtpFechaAlmacenamiento);
             this.Name = "FrmConsultaMateriaPrima";
+            this.Load += new System.EventHandler(this.FrmConsultaMateriaPrima_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMateriaPrima)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

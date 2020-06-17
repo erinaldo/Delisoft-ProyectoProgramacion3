@@ -49,9 +49,24 @@ namespace InventarioGUI
             RespuestaConsultarMateriaPrima respuesta;
 
 
+            DgvMateriaPrima.DataSource = null;
+            respuesta = materiaPrimaService.ConsultarCategoria(CmbCategoria.Text);
+
+            if (respuesta.ErrorMateriaPrima == false)
+            {
+                DgvMateriaPrima.DataSource = null;
+               DgvMateriaPrima.DataSource = respuesta.MateriasPrimas;
+               // DgvMateriaPrima.DataSource = materiaPrimaService.ConsultarCategoria(CmbCategoria.Text);
+
+                MessageBox.Show(respuesta.MensajeMateriaPrima, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(respuesta.MensajeMateriaPrima, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             if (CmbCategoria.Text.Equals("TODAS"))
             {
-
+                DgvMateriaPrima.DataSource = null;
                 respuesta = materiaPrimaService.Consultar();
 
                 if (respuesta.ErrorMateriaPrima == false)
@@ -65,23 +80,14 @@ namespace InventarioGUI
                     MessageBox.Show(respuesta.MensajeMateriaPrima, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-
-                respuesta = materiaPrimaService.ConsultarCategoria(CmbCategoria.Text);
-
-                if (respuesta.ErrorMateriaPrima == false)
-                {
-                    DgvMateriaPrima.DataSource = respuesta.MateriasPrimas;
-
-                    MessageBox.Show(respuesta.MensajeMateriaPrima, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show(respuesta.MensajeMateriaPrima, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            
+            
+            
         }
 
+        private void FrmConsultaMateriaPrima_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

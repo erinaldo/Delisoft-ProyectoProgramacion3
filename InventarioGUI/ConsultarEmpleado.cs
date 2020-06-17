@@ -16,8 +16,8 @@ namespace InventarioGUI
         }
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            RespuestaConsultar Respuesta = new RespuestaConsultar();
-            Respuesta = vendedorService.Consultar();
+            RespuestaConsultar Respuesta = vendedorService.Consultar();
+            ListaVendedores = Respuesta.Vendedores;
             if (Respuesta.Error == false)
             {
                 TblEmpleados.DataSource = Respuesta.Vendedores;
@@ -104,7 +104,7 @@ namespace InventarioGUI
 
             saveFileDialog.InitialDirectory = @"c:/document";
 
-            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.DefaultExt = ".pdf";
 
             string filename = "";
 

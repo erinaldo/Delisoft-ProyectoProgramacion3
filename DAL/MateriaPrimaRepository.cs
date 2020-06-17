@@ -1,6 +1,7 @@
 ﻿using Entity;
 using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
@@ -56,19 +57,25 @@ namespace DAL
             using (var Comando = _connection.CreateCommand())
             {
                 Comando.CommandText = "SELECT mp.codigomateria, mp.nombre, mp.precio," +
-                    "mp.fechaalmacenamiento, mp.codigocategoria, mp.cantidadtotal FROM materiaprima mp JOIN categoria c ON mp.codigocategoria = c.codigocategoria WHERE c.nombre = :categoria";
+                    "mp.fechaalmacenamiento, mp.codigocategoria, mp.cantidadtotal, c.nombre FROM materiaprima mp JOIN categoria c ON mp.codigocategoria = c.codigocategoria WHERE c.nombre = :categoria";
                 Comando.Parameters.Add("categoria", OracleDbType.Varchar2).Value = categoria;
                 dataReader = Comando.ExecuteReader();
                 if (dataReader.HasRows)
                 {
                     while (dataReader.Read())
                     {
-                        MateriaPrima materiaPrima = Mapear(dataReader);
+                        MateriaPrima materiaPrima = MapearCategoria(dataReader);
                         materiasPrimas.Add(materiaPrima);
                     }
                 }
             }
             return materiasPrimas;
+        }
+
+        public List<MateriaPrima> FiltrarMateriasPrimas(string categoria)
+        {
+            
+            return materiasPrimas.Where(m => m.Categoria.Nombre.Equals(categoria)).ToList();
         }
 
 
@@ -83,6 +90,23 @@ namespace DAL
                 Precio = dataReader.GetDouble(2),
                 FechaAlmacenamiento = dataReader.GetString(3),
                 CantidadTotal = dataReader.GetInt32(5)
+            };
+            return materiaPrima;
+        }
+
+        private MateriaPrima MapearCategoria(OracleDataReader dataReader)
+        {
+            if (!dataReader.HasRows) return null;
+            Categoria categoria = new Categoria();
+            categoria.Nombre = dataReader.GetString(6);
+            MateriaPrima materiaPrima = new MateriaPrima()
+            {
+                Codigo = dataReader.GetString(0),
+                Nombre = dataReader.GetString(1),
+                Precio = dataReader.GetDouble(2),
+                FechaAlmacenamiento = dataReader.GetString(3),
+                CantidadTotal = dataReader.GetInt32(5),
+                Categoria = categoria
             };
             return materiaPrima;
         }

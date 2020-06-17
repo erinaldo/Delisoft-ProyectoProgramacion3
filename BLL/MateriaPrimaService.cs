@@ -55,6 +55,7 @@ namespace BLL
                 return respuesta;
 
             }
+
             catch (Exception e)
             {
                 respuesta.ErrorMateriaPrima = true;
@@ -66,6 +67,13 @@ namespace BLL
                 conexion.Close();
             }
 
+        }
+
+        public RespuestaConsultarMateriaPrima FiltrarMateriaPrima(string categoria)
+        {
+            RespuestaConsultarMateriaPrima respuestaConsultarMateriaPrima = new RespuestaConsultarMateriaPrima();
+            respuestaConsultarMateriaPrima.MateriasPrimas = materiaPrimaRepository.FiltrarMateriasPrimas(categoria);
+            return respuestaConsultarMateriaPrima;
         }
 
         public RespuestaConsultarMateriaPrima ConsultarCategoria(string categoria)
