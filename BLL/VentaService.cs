@@ -1,5 +1,8 @@
 ﻿using DAL;
 using Entity;
+using Infraestructura;
+using System;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -33,6 +36,20 @@ namespace BLL
             finally
             {
                 conexion.Close();
+            }
+        }
+
+        public string GuardarVentas(List<Venta> vendedores, string filename)
+        {
+            DocumentoPdf documentoPdf = new DocumentoPdf();
+            try
+            {
+                documentoPdf.GuardarVentas(vendedores, filename);
+                return "Se genero el documento satisfactoriamente ";
+            }
+            catch (Exception  e)
+            {
+                return "Error al crear documento" + e.Message;
             }
         }
     }

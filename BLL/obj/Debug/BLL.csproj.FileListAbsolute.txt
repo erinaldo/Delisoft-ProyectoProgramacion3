@@ -52,3 +52,21 @@ C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.csproj.
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.dll
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\BLL.dll.config
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\BLL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\BLL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\DAL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\Entity.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\Infraestructura.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\itextsharp.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\DAL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\DAL.dll.config
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\Entity.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\Infraestructura.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\bin\Debug\itextsharp.xml
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\BLL\obj\Debug\BLL.pdb

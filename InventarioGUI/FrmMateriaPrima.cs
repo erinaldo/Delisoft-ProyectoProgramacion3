@@ -35,6 +35,9 @@ namespace InventarioGUI
                 FechaAlmacenamiento = DateTime.Now.ToString("dd/MM/yyyy"),
                 Categoria = categoria
             };
+
+            materiaPrima.CalcularCantidadTotal();
+
             string mensaje = materiaPrimaService.Guardar(materiaPrima);
             MessageBox.Show(mensaje, "error");
         }

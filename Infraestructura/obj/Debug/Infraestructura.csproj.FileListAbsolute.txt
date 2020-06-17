@@ -20,3 +20,14 @@ C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456a
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CopyComplete
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.dll
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI-cff2885ec8198ff533da4873de059b68a456af98\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\Infraestructura.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\Entity.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\Entity.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\bin\Debug\itextsharp.xml
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csprojAssemblyReference.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CoreCompileInputs.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.csproj.CopyComplete
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\Infraestructura\obj\Debug\Infraestructura.pdb

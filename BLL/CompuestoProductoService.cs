@@ -42,5 +42,36 @@ namespace BLL
                 conexion.Close();
             }
         }
+
+        public RespuestaConsultaCompuestos Consulta(string codigoproducto)
+        {
+            RespuestaConsultaCompuestos respuesta = new RespuestaConsultaCompuestos();
+            try
+            {
+                conexion.Open();
+
+                respuesta.compuestos = compuestoProductoRepository.Consultar(codigoproducto);
+
+                conexion.Close();
+
+                respuesta.Error = false;
+                respuesta.Mensaje = "Consulta realizada";
+
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Error = true;
+                respuesta.Mensaje = "Error de aplicación " + e.Message;
+                return respuesta;
+            }
+        }
+    }
+
+    public class RespuestaConsultaCompuestos
+    {
+        public List<CompuestoProducto> compuestos;
+        public string Mensaje;
+        public bool Error;
     }
 }

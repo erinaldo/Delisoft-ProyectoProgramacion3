@@ -19,14 +19,13 @@ namespace DAL
         {
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "INSERT INTO MateriaPrima (codigomateria, nombre, cantidadenvase, cantidad, precio, fechaalmacenamiento, codigocategoria) VALUES" +
-                    "(codigomateriaprima.NEXTVAL, :nombre, :cantidadenvase, :cantidad, :precio, :fechaalmacenamiento, :codigocategoria)";
+                Comando.CommandText = "INSERT INTO MateriaPrima (codigomateria, nombre, precio, fechaalmacenamiento, codigocategoria, cantidadtotal) VALUES" +
+                    "(codigomateriaprima.NEXTVAL, :nombre, :precio, :fechaalmacenamiento, :codigocategoria, :cantidadtotal)";
                 Comando.Parameters.Add("Nombre", OracleDbType.Varchar2).Value = materiaPrima.Nombre;
-                Comando.Parameters.Add("cantidadenvase", OracleDbType.Varchar2).Value = materiaPrima.CantidadEnvase;
-                Comando.Parameters.Add("Cantidad", OracleDbType.Varchar2).Value = materiaPrima.Cantidad;
-                Comando.Parameters.Add("precio", OracleDbType.Varchar2).Value = materiaPrima.Precio;
+                Comando.Parameters.Add("precio", OracleDbType.Double).Value = materiaPrima.Precio;
                 Comando.Parameters.Add("fechaalmacenamiento", OracleDbType.Varchar2).Value = materiaPrima.FechaAlmacenamiento;
                 Comando.Parameters.Add("codigocategoria", OracleDbType.Varchar2).Value = materiaPrima.Categoria.CodigoCategoria;
+                Comando.Parameters.Add("cantidadtotal", OracleDbType.Int32).Value = materiaPrima.CantidadTotal;
                 var filas = Comando.ExecuteNonQuery();
                 return filas;
             }
@@ -56,8 +55,8 @@ namespace DAL
             OracleDataReader dataReader;
             using (var Comando = _connection.CreateCommand())
             {
-                Comando.CommandText = "SELECT mp.codigomateria, mp.nombre, mp.cantidadenvase, mp.cantidad," +
-                    "mp.precio, mp.fechaalmacenamiento FROM materiaprima mp JOIN categoria c ON mp.codigocategoria = c.codigocategoria WHERE c.nombre = :categoria";
+                Comando.CommandText = "SELECT mp.codigomateria, mp.nombre, mp.precio," +
+                    "mp.fechaalmacenamiento, mp.codigocategoria, mp.cantidadtotal FROM materiaprima mp JOIN categoria c ON mp.codigocategoria = c.codigocategoria WHERE c.nombre = :categoria";
                 Comando.Parameters.Add("categoria", OracleDbType.Varchar2).Value = categoria;
                 dataReader = Comando.ExecuteReader();
                 if (dataReader.HasRows)
@@ -72,6 +71,8 @@ namespace DAL
             return materiasPrimas;
         }
 
+
+
         private MateriaPrima Mapear(OracleDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
@@ -79,13 +80,28 @@ namespace DAL
             {
                 Codigo = dataReader.GetString(0),
                 Nombre = dataReader.GetString(1),
-                CantidadEnvase = dataReader.GetInt32(2),
-                Cantidad = dataReader.GetInt32(3),
-                Precio = dataReader.GetDouble(4),
-                FechaAlmacenamiento = dataReader.GetString(5)
+                Precio = dataReader.GetDouble(2),
+                FechaAlmacenamiento = dataReader.GetString(3),
+                CantidadTotal = dataReader.GetInt32(5)
             };
             return materiaPrima;
         }
 
+        public int Modificar(string codigoMateria, int cantidad)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = @"UPDATE materiaprima SET cantidadtotal=:cantidad
+                                        WHERE codigomateria=:codigomateria";
+
+                command.Parameters.Add("cantidad", OracleDbType.Int32).Value = cantidad;
+                command.Parameters.Add("codigomateria", OracleDbType.Varchar2).Value = codigoMateria;
+                OracleTransaction transaction = _connection.BeginTransaction();
+                var filas = command.ExecuteNonQuery();
+                transaction.Commit();
+                return filas;
+            }
+
+        }
     }
 }

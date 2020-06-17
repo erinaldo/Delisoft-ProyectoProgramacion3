@@ -100,6 +100,28 @@ namespace BLL
             }
 
         }
+
+        public string Modificar(string codigoMateria, int cantidad)
+        {
+            try
+            {
+                conexion.Open();
+                materiaPrimaRepository.Modificar(codigoMateria, cantidad);
+                conexion.Close();
+
+                return "Modificado satisfactoriamente";
+            }
+            catch (Exception e)
+            {
+
+                return $"Error de la Aplicación: {e.Message}";
+            }
+            finally 
+            {
+                conexion.Close(); 
+            }
+
+        }
     }
     public class RespuestaConsultarMateriaPrima
     {

@@ -31,3 +31,14 @@ C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.dll
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.dll.config
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\DAL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Entity.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\bin\Debug\Entity.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\DAL\obj\Debug\DAL.pdb

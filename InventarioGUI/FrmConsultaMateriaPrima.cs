@@ -23,6 +23,7 @@ namespace InventarioGUI
             categoriaService = new CategoriaService(ConfigConnection.connectionString);
             materiaPrimaService = new MateriaPrimaService(ConfigConnection.connectionString);
 
+
             LlenarCategorias();
         }
 
@@ -46,8 +47,11 @@ namespace InventarioGUI
         private void CmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             RespuestaConsultarMateriaPrima respuesta;
-            if (CmbCategoria.Equals("TODAS"))
+
+
+            if (CmbCategoria.Text.Equals("TODAS"))
             {
+
                 respuesta = materiaPrimaService.Consultar();
 
                 if (respuesta.ErrorMateriaPrima == false)
@@ -63,6 +67,7 @@ namespace InventarioGUI
             }
             else
             {
+
                 respuesta = materiaPrimaService.ConsultarCategoria(CmbCategoria.Text);
 
                 if (respuesta.ErrorMateriaPrima == false)
@@ -77,5 +82,6 @@ namespace InventarioGUI
                 }
             }
         }
+
     }
 }

@@ -11,10 +11,13 @@ namespace InventarioGUI
         List<Vendedor> vendedores;
         List<Producto> productos;
         List<DetalleVenta> detallesVentas;
+        List<MateriaPrima> materiaPrimas;
         DetalleVentaService detalleVentaService;
         VendedorService vendedorService;
         ProductoService productoService;
         VentaService ventaService;
+        CompuestoProductoService compuestoProductoService;
+        MateriaPrimaService materiaPrimaService;
         int indice;
         public FrmVenta()
         {
@@ -28,6 +31,10 @@ namespace InventarioGUI
             detallesVentas = new List<DetalleVenta>();
 
             ventaService = new VentaService(ConfigConnection.connectionString);
+
+            compuestoProductoService = new CompuestoProductoService(ConfigConnection.connectionString);
+            materiaPrimaService = new MateriaPrimaService(ConfigConnection.connectionString);
+            materiaPrimas = new List<MateriaPrima>();
 
             InitializeComponent();
 
@@ -76,8 +83,7 @@ namespace InventarioGUI
         {
             CmbProducto.Items.Clear();
 
-            RespuestaConsultarProducto respuesta = new RespuestaConsultarProducto();
-            respuesta = productoService.Consultar();
+            RespuestaConsultarProducto respuesta = productoService.Consultar();
             productos = respuesta.productos;
 
             if (respuesta.ErrorProducto == false)
@@ -105,14 +111,13 @@ namespace InventarioGUI
 
         private void BtnAgregar_Click(object sender, System.EventArgs e)
         {
-            RespuestaFiltroProducto respuesta = new RespuestaFiltroProducto();
-            respuesta = productoService.FiltrarCodigo(TxtCodigo.Text);
+            RespuestaFiltroProducto respuesta = productoService.FiltrarCodigo(TxtCodigo.Text);
 
 
             DetalleVenta detalleVenta = new DetalleVenta()
             {
                 Producto = respuesta.producto,
-                Cantidad = Convert.ToInt32(PckCantidad.Value.ToString()),
+                Cantidad = Convert.ToInt32(PckCantidad.Value.ToString())
             };
 
             detalleVenta.CalcularTotal();
@@ -176,7 +181,7 @@ namespace InventarioGUI
                 MessageBox.Show(mensajeDetalleVenta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-
+            DescuentoMateriaPrima();
         }
 
         public void Limpiar()
@@ -198,6 +203,23 @@ namespace InventarioGUI
             if(indice != -1)
             {
                 DgvProductos.Rows.RemoveAt(indice);
+            }
+        }
+
+        private void DescuentoMateriaPrima()
+        {
+            RespuestaConsultarMateriaPrima respuestaMateria = materiaPrimaService.Consultar();
+
+            RespuestaConsultaCompuestos respuesta;
+            foreach (var detalleVenta in detallesVentas)
+            {
+                respuesta = compuestoProductoService.Consulta(detalleVenta.Producto.IdProducto);
+                foreach (var compuestoProducto in respuesta.compuestos)
+                {
+                    MateriaPrima materia = respuestaMateria.MateriasPrimas.Find(mp => mp.Codigo.Equals(compuestoProducto.MateriaPrima.Codigo));
+                    string mensaje = materiaPrimaService.Modificar(compuestoProducto.MateriaPrima.Codigo, (materia.CantidadTotal - (compuestoProducto.CantidadUnitaria * detalleVenta.Cantidad)));
+                    MessageBox.Show(mensaje);
+                }
             }
         }
     }

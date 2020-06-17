@@ -121,3 +121,45 @@ C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\I
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.csproj.CopyComplete
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.exe
 C:\Users\Mario Mendoza\Desktop\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\InventarioGUI.exe.config
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\InventarioGUI.exe
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\InventarioGUI.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\BLL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\Entity.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\MetroFramework.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\MetroFramework.Fonts.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\DAL.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\Infraestructura.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\itextsharp.dll
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\BLL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\BLL.dll.config
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\Entity.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\DAL.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\DAL.dll.config
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\Infraestructura.pdb
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\bin\Debug\itextsharp.xml
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.csprojAssemblyReference.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.AgregarUsuario.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.CabiarContraseña.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.ConsultarEmpleado.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.ContraseñaOlvidada.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmConfiguracion.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmConsultaMateriaPrima.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmConsultaProductos.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmEmpleados.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmInicio.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmInventario.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmMateriaPrima.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmOperacionesProductos.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmProducto.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.FrmVenta.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.Pqrs.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.Principal.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.Login.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.Properties.Resources.resources
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.csproj.GenerateResource.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.csproj.CoreCompileInputs.cache
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.csproj.CopyComplete
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.exe
+D:\Programas\ProyectoGUI\ProyectoGUI\InventarioGUI\obj\Debug\InventarioGUI.pdb
